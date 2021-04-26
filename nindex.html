@@ -1,0 +1,372 @@
+<!DOCTYPE html>	
+<html>
+<head>
+<title> Chatbot aided Room Reservation</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
+</script>
+
+<script>
+
+$(document).ready(function() {
+	$("#divh1").children().css({
+	"color": "#FF4D45",
+	});
+});
+
+$(document).ready(function () {
+  var block = $(".main");
+  block.dblclick(function () {
+  block.toggleClass("GFG");
+  });
+});
+
+
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+
+
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("#anim").animate({height: "200px"});
+    $("#anim").animate({width: "150px"});
+      });
+  $("#btn2").click(function(){
+    $("#anim").animate({height: "200px"});
+    $("#anim").animate({width: "350px"});
+    });
+});
+
+
+function blink(){
+	$("#blink").fadeOut();
+	$("#blink").fadeIn();
+	}
+        setInterval(blink,2000);
+
+
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+
+</script>
+
+
+
+
+
+
+<style>
+.main
+{
+   background: none;
+}
+
+.GFG {
+   background:#5C0000;
+   color: white;
+}
+
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #EBC5FF;
+  border: solid 1px #EBA2D7;
+  color: black;
+  font-weight: bold;
+  width: 700px;
+
+}
+
+#panel {
+ 
+ display: none;
+}
+
+
+ .parent * {
+            color: black;
+          }
+</style>
+
+</head>
+<body bgcolor=#cc99ff>
+<div class="container" align="center">
+<div class="row col-md-6 col-md-offset-3">
+<div class="panel panel-primary">
+<div class="panel-heading text-center">
+<h1 align="center"> <font face="copperplate" size="28" color="#ED2057">Happy Stay! </font> </h1>
+
+<div class="main" align="center">
+<p> <font face="Brush Script MT" size="18" color="#AF5174" font-size: 40px;>Have a nice day:) </font> </p> </div> 
+ </div>
+<div class panel="panel panel-body">
+  <div style="width: 50%;
+margin:0 auto; 
+border: 2px double #FF0000;
+background-color: pink;
+box-shadow: 1px 1px 10px 1px;">
+
+
+
+
+
+
+
+
+<center><image src="image.jpg" usemap="#room"></center>
+<map name="room">
+<area shape="rect" coords="82,116,227,167" alt="rectangle" href="https://www.wakefit.co/bed">
+<area shape="rect" coords="86,86,187,113" alt="rectangle" href="https://www.wakefit.co/pillows-and-cushions/sleeping-pillow">
+<area shape="rect" coords="46,73,66,123" alt="rectangle" href="https://www.pepperfry.com/furniture-bed-side-tables.html">
+<area shape="rect" coords="23,109,49,154" alt="rectangle" href="https://www.pepperfry.com/furniture-bed-side-tables.html">
+<area shape="rect" coords="204,95,243,148" alt="rectangle" href="https://www.amazon.in/Bedside-Tables/b?ie=UTF8&node=5689367031">
+</map>
+
+<br> <br>
+<div align="center">
+<div id="flip">Click to slide the panel down or up</div>
+<div id="panel">
+
+<button id="btn1">Click to Animate</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button id="btn2">Click to Reset</button>
+
+</div>
+</div>
+<br> <br>
+<div align="center">
+<iframe id="anim" src="Table_exp5.html" width="350px" height="200px">
+</iframe>
+
+<div id="blink">
+<h3><b> Rating </b></h3> </div>
+
+
+<p><b>Start typing a name in the input field below:</b></p>
+
+
+
+<form>
+First name: <input type="text" onkeyup="showHint(this.value)">
+</form>
+<p>Suggestions: <span id="txtHint"></span></p>
+<script>
+function showHint(str) {
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    xmlhttp.send();
+  }
+}
+</script>
+
+<br>
+
+ <form action="connect.jsp"method="post">
+	<fieldset>
+		<div  class=" form-group" style="padding: 10px; text-align:center;">
+		
+		<input type="text" name="fnm" value="" placeholder="Enter the food name" style="padding: 5px; width:90%">
+		</div>
+		
+		<div  class=" form-group" style="padding: 10px; text-align:center;">
+		<input type="text" name="qn" value="" placeholder="Enter the Quantity " style="padding: 5px; width:90%">
+		</div>
+		<div  class=" form-group" style="padding: 10px; text-align:center;">
+		<input name="details" value="" cols="5" placeholder="Enter further details if any" style="padding: 5px; width:90%">
+		</div>
+		
+		<div  class=" form-group" style="padding: 10px; text-align:center;">
+		<input type="text" name="room" value="" placeholder="Enter the type of room you prefer" style="padding: 5px; width:90%">
+		</div>
+		
+		<div  class=" form-group" style="padding: 10px; text-align:center;">
+		<input type="text" name="nr" value="" placeholder="Enter the number of rooms required" style="padding: 5px; width:90%">
+		</div>
+		
+		<div  class=" form-group" style="padding: 10px; text-align:center;">
+		<input type="text" name="count" value="" placeholder="Enter the number of days of stay " style="padding: 5px; width:90%">
+		</div>
+		
+		<div  class=" form-group" style="padding: 10px; text-align:center;">
+		<input type="text" name="mem" value="" placeholder="Count of members with you " style="padding: 5px; width:90%">
+		</div>
+		
+		
+		<div  class=" form-group" style="padding: 10px; text-align:center;">
+        <input type="text" value="Red Pink Orange" placeholder="Select your blanket color:  "  onselect="blanket()" style="padding: 5px; width:90%">
+        </div>
+		<div class=" form-group" style="padding: 10px; text-align:center;">
+		 <input id="req8" name="req8" placeholder="Would you like to have a room with Balcony?" rows="2" cols="30" style="padding: 5px; width:90%">
+		</div>
+
+		<label for="email" </label>
+		<input type="email" id="email" name="email" placeholder="Enter your Email id:" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style="padding: 5px; width:90%">
+		<br><br>
+	
+		<label id="age"></label> 
+		<input type="text" id="age" name="age" placeholder="Is a senior citizen accompanying?"oninput="myFunction()" style="padding: 5px; width:90%">
+		<p id="demo"></p>
+	
+		<div  class=" form-group" style="padding: 10px; text-align:center;"> Check before you proced!<br>
+		<input type="submit" name="ins" value="Insert" >
+		</div>
+	
+		</fieldset>
+	</form>	
+<br>				
+	<form action="view.jsp"method="post">
+		<center><a href="view.jsp">View Record</a></center></div>
+		
+	</form>
+	
+
+	</fieldset>
+</form >
+<div class=" form-group" style="padding: 10px; text-align:center;">
+<input type="submit" value="Just Click!"onclick="clickfunc()">
+<p id="clk"> </p></div>
+
+<script>
+function myinpfunction() {
+  var x = document.getElementById("input").value;
+  document.getElementById("myip").innerHTML = "You typed: " + x;
+}
+
+
+function invalidfunc()
+{
+alert('Fill the required details');
+}
+
+
+function resetfunction()
+{
+  var y=document.getElementById("input").value;
+  alert('The form got reset');
+}
+
+function blanket() {
+  alert("You selected your blanket color!");
+}
+
+function clickfunc()
+{
+document.getElementById("clk").innerHTML="In case of any discrepancies contact happystay@gmail.com";
+	var x = document.forms["details"]["email"].value;
+	var y = document.forms["details"]["arrival"].value;
+	var z = document.forms["details"]["rooms"].value;
+	var a = document.forms["details"]["departure"].value;
+	if(x == ""||y == ""||z == ""||a == ""){
+	alert("Kindly fill all the details");
+	return false;
+	}
+
+
+}
+
+
+
+document.getElementById("over").onmouseover=function() {overfunc()};
+document.getElementById("over").onmouseout=function() {outfunc()};
+function overfunc()
+{
+document.getElementById("over").style.color="#BAC614";
+}
+function outfunc()
+{
+document.getElementById("over").style.color="#00021C";
+}
+
+
+document.getElementById("double").ondblclick = function() {dblclkfunc()};
+function dblclkfunc()
+{
+document.getElementById("double").innerHTML="Thankyou for your submission.Have a good day!";
+}
+
+
+document.getElementById("keydown").onkeydown = function() {keydownfunc()};
+function keydownfunc()
+{
+document.getElementById("keydown").style.backgroundColor="#FF84FE";
+}
+
+
+document.getElementById("press").onkeypress = function() {keypressfunc()};
+function keypressfunc()
+{
+document.getElementById("press").style.backgroundColor="#19ACD7";
+}
+
+
+
+document.getElementById("keyup").onkeyup = function() {keyupfunc()};
+function keyupfunc()
+{
+   var z=document.getElementById("keyup");
+   z.value= z.value.toUpperCase();
+}
+
+function rsizefunc()
+{
+  alert("Your Window has been resized");
+}
+
+
+function errorfunc()
+{
+  alert("The image could not be loaded.Try again later");
+}
+
+
+function loadfunc()
+{
+  alert("The page is loaded");
+}
+
+
+function yesnoCheck() {
+	var p = document.forms["details"]["age"].value;
+    if (p == "Yes") {
+	  x.style.display = "none"; 
+		
+    } else {
+      x.style.display = "block";
+    }
+}
+
+function myFunction() {
+  var x = document.getElementById("age");
+   document.getElementById("demo").innerHTML = "Thankyou for the deatails " 	;
+}
+
+
+</script>
+
+
+<body onload="loadfunc()">
+
+
+<p><a href="https://www.tripadvisor.in/Hotel_Review-g304556-d730057-Reviews-GreenPark_Chennai-Chennai_Madras_Chennai_District_Tamil_Nadu.html"> Click here to see the rating of the Hotel and Rooms </a></p>
+</div>
+<br> <br>
+<a href='#top' style="float:centre"><u>Click here to scroll to the top of the page.</u></a>  
+
+
+<br> <br>
+
+</body>
+</html>

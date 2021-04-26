@@ -1,0 +1,72 @@
+body
+{
+	background-color:#FFDFD4;
+	link:purple;
+	alink:green;
+	vlink:red;
+	text-align:center;
+	
+}
+h1
+{
+	font-family:copperplate ;
+	size:28 ;
+	color:#ED2057	;
+}
+p
+{
+	font-family :copperplate ;
+	size:18 ;
+	
+	
+}
+div
+{
+	  justify-content: center;
+	  align-content: center;
+	  padding: 10px;
+}	
+w3-row
+{
+	  justify-content: center;
+}	
+input
+{
+	padding:6px;
+	font-size:14px;
+	border-radius:4px;
+	display: inline-block;
+	text-align:right;
+}
+textarea{
+	padding: 6px;
+	font-size:14px;	
+	display: inline-block;
+	text-align:right;
+	border-radius:4px;
+
+}
+select{
+	padding: 6px;
+	font-size:14px;
+}
+label{
+	width: 240px;
+	display: inline-block;
+	text-align:right;
+}
+container {
+ max-width: 98rem;
+ margin: 0 auto;
+ padding: 0 2.2rem;
+ text-align: center;
+ color: pink;
+}
+.cta
+{max-width: 98rem;
+ margin: 0 auto;
+ padding: 0 2.2rem;
+ text-align: center;
+ color: pink;
+ font size:18px;
+}

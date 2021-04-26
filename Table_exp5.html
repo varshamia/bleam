@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+  
+    <script type="text/javascript">
+        $(function() {
+            $("table tr:nth-child(odd)")
+                .addClass("zebrastripe");
+        });
+    </script>
+  
+    <style type="text/css">
+        body,
+        td {
+            font-size: 10pt;
+            text-align: center;
+        }
+          
+        h1 {
+            color: black;
+    }
+          
+        table {
+            border: 1px black solid;
+            border-collapse: collapse;
+            width: 800px;
+        }
+          
+        th {
+            font-size: 15px;
+            padding: 5px 8px;
+            border: 1px outset silver;
+            background-color: black;
+            color: white;
+        }
+          
+        tr {
+            border: 1px outset silver;
+            padding: 5px 8px;
+            background-color: white;
+            margin: 1px;
+        }
+          
+        tr.zebrastripe {
+            background-color: #A4C8B2;
+        }
+          
+        td {
+            border: 0.5px outset silver;
+            border-collapse: collapse;
+            padding: 5px 8px;
+        }
+          
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+   </head>
+<body>
+
+<h3 align="center"><i><font color="#590247">ROOM DETAILS</font></i></h3>
+<table class="center" id=cellspace="9" cellpadding="6"  border="1" >
+<tr>
+<th> ROOMS </th>
+<th> NUMBER OF OCCUPANTS </th>
+<th> PRICE </th>
+</tr>
+<tr>
+<td> Single </td>
+<td> One person </td>
+<td> 1000 </td>
+</tr>
+<tr>
+<td> Double </td>
+<td> Two people </td>
+<td> 2000 </td>
+</tr>
+<tr>
+<td> Triple </td>
+<td> Three persons </td>
+<td> 3000 </td>
+</tr>
+<tr>
+<td> Quad </td>
+<td> Four persons </td>
+<td> 4000 </td>
+</tr>
+<tr>
+<td> Queen </td>
+<td> One or more people </td>
+<td> 4500 </td>
+</tr>
+<tr>
+<td> King </td>
+<td> One or more people </td>
+<td> 5000 </td>
+</tr>
+</table>
+</body>
+</html>
